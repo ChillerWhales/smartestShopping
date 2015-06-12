@@ -264,7 +264,9 @@ var App = Eventful.createClass({
     //  <Link to="login"> Sign In</Link>;
     return (
       <div id="app">
-        <RouteHandler data={this.state} />
+        <div class="container">
+          <RouteHandler data={this.state} />
+        </div>
       </div>
     );
   }

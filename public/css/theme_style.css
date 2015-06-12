@@ -5,6 +5,15 @@
  *   version 2.0
  *
 */
+
+.btn {
+ border-radius: 0px !important;
+}
+
+.btn-group-justified>.btn-group .btn {
+ padding: 20px 0 20px 0;
+}
+
 h1,
 h2,
 h3,
@@ -6477,6 +6486,7 @@ ul {
   font-size: 12px;
 }
 
+<<<<<<< HEAD
 #tags {
   display: block;
   margin:6px auto;
