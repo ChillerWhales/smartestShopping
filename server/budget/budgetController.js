@@ -26,20 +26,20 @@ module.exports = {
   },
 
   setBalance: function(req,res){ // resets the current Balance to value if present or Budget amount on current user
-
+    //TODO
   },
 
   getCurrentBudget: function(req, res) {
     var username = req.uid;
     User
-    .findOne({username: username})
-    .exec(function(err, user) {
+      .findOne({username: username})
+      .exec(function(err, user) {
 
-      if(err) {
-        console.error(err);
-        res.status(500).send({error: 'Server Error in Budget Retrieval'});
-      } else {
-        res.json(user.budget);
+        if(err) {
+          console.error(err);
+          res.status(500).send({error: 'Server Error in Budget Retrieval'});
+        } else {
+          res.json(user.budget);
       }
     });
   },
