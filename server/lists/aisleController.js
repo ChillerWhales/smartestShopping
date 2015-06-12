@@ -17,6 +17,7 @@ module.exports = function(req,res) {
   		if (err) {
   			console.error(err);
   		}
+      console.log(result.ArrayOfProduct.Product);
   		res.status(200).json(result.ArrayOfProduct.Product);
   	})
   })
