@@ -96,7 +96,7 @@ var App = Eventful.createClass({
     // var itemCost = cost || this.state.totalCost;
     console.log('totalcost', this.state.totalCost);
       this.setState({
-        remainingBudget: this.state.budget - itemCost
+        remainingBudget: parseFloat(this.state.budget - itemCost).toFixed(2);
       })
   },
 
@@ -263,7 +263,9 @@ var App = Eventful.createClass({
     //  <Link to="login"> Sign In</Link>;
     return (
       <div id="app">
-        <RouteHandler data={this.state} />
+        <div class="container">
+          <RouteHandler data={this.state} />
+        </div>
       </div>
     );
   }
