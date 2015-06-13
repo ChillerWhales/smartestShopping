@@ -45,10 +45,27 @@ var List = Eventful.createClass({
     this.emit('filter-list', value);
   },
 
+  selectFirst: function() {
+    event.preventDefault();
+    if (this.state.autocomplete_items[0]) {
+
+      var item = this.state.autocomplete_items[0];
+      $.post(url.addItem, {_id: item._id})
+      .done(function(data) {
+        this.emit('refresh-list',data);
+        this.emit('emptyAutocomplete');
+      }.bind(this))
+      .fail(function(xhr, status, err) {
+        console.error('Error getting item list:', status, err);
+      }.bind(this));
+    }
+  },
+
   autocomplete: function(value) {
     if (value.length >= 3 ){
       $.get(url.autocomplete + '/' + value)
       .done(function(data) {
+        this.setState({autocomplete_items: []});
         this.setState({autocomplete_items: data});
       }.bind(this))
       .fail(function(xhr, status, err) {
@@ -73,13 +90,13 @@ var List = Eventful.createClass({
               <div className="row">
                 <div className="list">
                   <div className='new-item-input'>
-                    <form name="new-item-form">
+                    <form name="new-item-form" onSubmit={this.selectFirst} >
                       <input id="tags" type="text" ref="newItemInput" name="newItemInput" onChange={this.handleInput} placeholder="Enter an item"/>
                     </form>
                 </div>
                 <div className="budgetDisplay">
-                  <h2 className="setBudget">Budget: ${this.props.budget}</h2>
-                  <h2 className="remainingBudget">Balance: ${this.props.remainingBudget}</h2>
+                  <div className="setBudget">Budget: ${this.props.budget}</div>
+                  <div className="remainingBudget">Balance: ${this.props.remainingBudget}</div>
                 </div>
                 <ul>
                   {this.state.autocomplete_items.map(this.renderAutocompleteItem)}
@@ -97,5 +114,6 @@ var List = Eventful.createClass({
     );
   }
 });
+
 
 module.exports = List;

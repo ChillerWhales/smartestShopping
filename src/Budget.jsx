@@ -38,13 +38,13 @@ var Budget = Eventful.createClass({
         <div className="col-md-4">
           <div className="ibox float-e-margins" id="list-border">
             <div className="ibox-title">
-              <h5>Budget Management and Spending</h5>
+              <h5>Budget Management</h5>
             </div>
             <div className="ibox-content">
 
               <div className="row">
-                <h2 className="setBudget">Current Budget: ${this.props.data.budget}</h2>
-                <h2 className="remainingBudget">Remaining Balance: ${this.props.data.remainingBudget}</h2>
+                <div className="setBudget"> Budget: ${this.props.data.budget}</div>
+                <div className="remainingBudget"> Balance: ${this.props.data.remainingBudget}</div>
               </div>
 
               <div className="row">

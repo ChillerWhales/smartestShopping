@@ -10,5 +10,6 @@ module.exports = {
   login: '/auth/login',
   logout: '/auth/logout',
   token: '/auth/token',
-  autocomplete: '/api/item/autocomplete'
+  autocomplete: '/api/item/autocomplete',
+  aisle: '/api/aisle'
 };

@@ -3,10 +3,33 @@ var Eventful = require('eventful-react');
 var NavToggle = require('./NavToggle');
 var List = require('./List');
 var auth = require('./auth');
+var AisleMap = require('./AisleMap');
+var AisleMapCanvas = require('./AisleMapCanvas');
 
 var StoreLayout = Eventful.createClass({
   contextTypes: {
     router: React.PropTypes.func
+  },
+
+  getInitialState: function() {
+    return {
+      items: [],
+      aisleMap: new AisleMap({items: this.props.data.items})
+    };
+  },
+
+  renderAisleMap: AisleMapCanvas,
+
+  componentDidMount: function() {
+    var testMap = this.state.aisleMap;
+    testMap.constructGrid(5);
+    testMap.placeItems();
+    testMap.findAislesWithItems();
+    testMap.createPath();
+    this.renderAisleMap(testMap);
+    console.log("testmap items:", testMap.items);
+    console.log("testmap aisleWithItems:", testMap.aislesWithItems);
+    console.log("testmap path", testMap.path);
   },
 
   statics: {
@@ -21,10 +44,14 @@ var StoreLayout = Eventful.createClass({
   },
 
   render: function() {
+    console.log("props:", this.props.data.items);
     return (
       <div id="home">
         <NavToggle />
-        <h1> will set up Store Layout canvas / Animation </h1>
+        <div className="row">
+          <canvas className="aisle-canvas" id="myCanvas" width="1000" height="1000"></canvas>
+          <canvas className="aisle-canvas" id="backgroundCanvas" width="1000" height="1000"></canvas>
+        </div>
       </div>
     );
   }

@@ -5,6 +5,19 @@
  *   version 2.0
  *
 */
+
+.btn {
+  border-radius: 0px !important;
+}
+
+.btn-group-justified>.btn-group .btn {
+  padding: 20px 0 20px 0;
+}
+.budgetDisplay {
+  margin: 20px 10px ;
+
+}
+
 h1,
 h2,
 h3,
@@ -3932,8 +3945,9 @@ body.modal-open {
   padding: 100px 20px 20px 20px;
 }
 .logo-name {
-  color: #e6e6e6;
-  font-size: 100px;
+  /*color: #e6e6e6;*/
+  color: #107768;
+  font-size: 90px;
   font-weight: 800;
   letter-spacing: -10px;
   margin-bottom: 0px;
@@ -6427,7 +6441,7 @@ li {
 }
 
 h5 {
-  margin-left: 29% !important;
+  margin-left: 10% !important;
 }
 
 .new-item-input {
@@ -6456,9 +6470,9 @@ ul {
 }
 
 #list-border {
-  border-color: #e7eaec;
+/*  border-color: #e7eaec;
   border-style: solid solid;
-  border-width: 0px 4px 4px 4px;
+  border-width: 0px 4px 4px 4px;*/
 }
 
 .show {

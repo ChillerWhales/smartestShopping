@@ -17,9 +17,9 @@ var Login = Eventful.createClass({
       <div id="login" className="middle-box text-center loginscreen  animated fadeInDown">
         <div>
           <div>
-            <h2 className="logo-name"><i className="fa fa-shopping-cart fa-spin"></i><br />SSL</h2>
+            <h2 className="logo-name"><i className="fa fa-cogs fa-spin"></i><br />SSL</h2>
           </div>
-          <h3>Welcome to Smart Shopping List</h3>
+          <h3>Welcome to SMARTEST Shopping List</h3>
           <p>Login</p>
           <form className="login-form" name="loginform" onSubmit={this.loginUser} role="form">
             <div className="form-group">

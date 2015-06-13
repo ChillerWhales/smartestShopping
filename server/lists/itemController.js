@@ -34,6 +34,36 @@ module.exports = {
         next();
       } else {
         res.status(404).send({error: 'Item didnt found'});
+        var uri = 'http://api.nal.usda.gov/usda/ndb/search/'
+        var api_key = config.usdaKey;
+        var query = '?format=json&q=' + newItem.name + '&sort=r&max=10&offset=0&api_key=' + api_key;
+
+        request.get(uri + query, function(err, res, body) {
+          if (err) {
+            console.error(err);
+          }
+          var categories = [];
+          if (JSON.parse(body).list) {
+            var data = JSON.parse(body).list.item;
+            for (var i = 0; i < data.length; i++) {
+              categories.push(data[i].group);
+            }
+            newItem.data.food_category = mode(categories);            
+          } else {
+            newItem.data.food_category = 'unknown';
+          }
+
+          createItem(newItem)
+          .then(function(createdItem) {
+            req.smartShoppingData = createdItem;
+            res.send(201).json(createdItem);
+            next();
+          })
+          .catch(function(err) {
+            console.error(err);
+            res.status(500).send({error: 'Server Error'});
+          });
+        }); 
       }
     })
     .catch(function(err) {
