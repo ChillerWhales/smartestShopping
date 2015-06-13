@@ -2,11 +2,13 @@ var AisleMap = function(options) {
   var options = options || {};
   var numAisles = options.numAisles || 10;
 	this.numAisles = numAisles;
-	var items = []
+	var items = [];
+
+	var numTestItems = options.numTestItems || 10;
 
   //test data
 	if (!options.items) {
-		for (var i = 0; i < 15; i++) {
+		for (var i = 0; i < numTestItems; i++) {
 			items.push({x: Math.floor((Math.random()*numAisles)), y: Math.floor((Math.random()*10))})
 		}
 	}
