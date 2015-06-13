@@ -104,7 +104,7 @@ var List = Eventful.createClass({
                 <ul>
                   {this.state.autocomplete_items.map(this.renderAutocompleteItem)}
                 </ul>
-                <ul>
+                <ul class="itemList">
                   {this.props.filteredItems.map(this.renderListItem)}
                 </ul>
                 </div>

@@ -7,7 +7,6 @@
 */
 
 .btn {
-<<<<<<< HEAD
   border-radius: 0px !important;
 }
 
@@ -15,15 +14,23 @@
   padding: 20px 0 20px 0;
 }
 .budgetDisplay {
-  margin: 20px 10px ;
-
-=======
- border-radius: 0px !important;
+  font-size:20px;
+  margin: 20px 10px 0 30px;
+  border-radius: 0px !important;
 }
 
 .btn-group-justified>.btn-group .btn {
  padding: 20px 0 20px 0;
->>>>>>> [styles]WIP
+}
+
+.list-item {
+  border-bottom: 1px solid #aaa;
+  padding-bottom:10px;
+}
+
+.itemList {
+  padding-left: 20px !important;
+  margin-top:0px;
 }
 
 h1,
@@ -3357,7 +3364,7 @@ code {
 .ibox-content {
   background-color: #ffffff;
   color: inherit;
-  padding: 15px 20px 20px 20px;
+  padding: 15px 10px 20px 10px;
   border-color: #e7eaec;
   border-image: none;
   border-style: solid solid none;
@@ -6502,7 +6509,7 @@ ul {
 #tags {
   display: block;
   margin:6px auto;
-  width:90%;
+  width:98%;
   line-height: 50px !important;
   height: 50px !important;
   font-size: 24px;
