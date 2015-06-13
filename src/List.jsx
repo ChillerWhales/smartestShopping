@@ -16,7 +16,9 @@ var List = Eventful.createClass({
     this.on('emptyAutocomplete', function() {
       this.setState({autocomplete_items: []});
     });
-
+    this.on('refresh-list', function(data) {
+      React.findDOMNode(this.refs.newItemInput).value = '';
+    });
   },
 
   renderListItem: function(itemData, id) {
@@ -52,6 +54,7 @@ var List = Eventful.createClass({
       var item = this.state.autocomplete_items[0];
       $.post(url.addItem, {_id: item._id})
       .done(function(data) {
+        React.findDOMNode(this.refs.newItemInput).value = '';
         this.emit('refresh-list',data);
         this.emit('emptyAutocomplete');
       }.bind(this))
