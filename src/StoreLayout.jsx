@@ -14,7 +14,7 @@ var StoreLayout = Eventful.createClass({
   getInitialState: function() {
     return {
       items: [],
-      aisleMap: new AisleMap({items: this.props.data.items})
+      aisleMap: new AisleMap({numTestItems: this.props.data.items.length})
     };
   },
 
