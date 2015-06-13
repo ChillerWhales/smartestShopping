@@ -97,7 +97,7 @@ var App = Eventful.createClass({
     // var itemCost = cost || this.state.totalCost;
     console.log('totalcost', this.state.totalCost);
       this.setState({
-        remainingBudget: parseFloat(this.state.budget - itemCost).toFixed(2);
+        remainingBudget: parseFloat(this.state.budget - itemCost).toFixed(2)
       })
   },
 
