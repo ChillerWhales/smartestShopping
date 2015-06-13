@@ -7,7 +7,6 @@
 */
 
 .btn {
-<<<<<<< HEAD
   border-radius: 0px !important;
 }
 
@@ -17,13 +16,6 @@
 .budgetDisplay {
   margin: 20px 10px ;
 
-=======
- border-radius: 0px !important;
-}
-
-.btn-group-justified>.btn-group .btn {
- padding: 20px 0 20px 0;
->>>>>>> [styles]WIP
 }
 
 h1,

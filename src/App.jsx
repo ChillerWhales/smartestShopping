@@ -44,7 +44,6 @@ var App = Eventful.createClass({
   },
 
   getAisle: function(itemName, index) {
-    console.log(itemName);
     var aisle;
     $.ajax({
       url: url.aisle,
@@ -97,7 +96,7 @@ var App = Eventful.createClass({
     // var itemCost = cost || this.state.totalCost;
     console.log('totalcost', this.state.totalCost);
       this.setState({
-        remainingBudget: parseFloat(this.state.budget - itemCost).toFixed(2)
+        remainingBudget: this.state.budget - itemCost
       })
   },
 
@@ -264,9 +263,7 @@ var App = Eventful.createClass({
     //  <Link to="login"> Sign In</Link>;
     return (
       <div id="app">
-        <div class="container">
-          <RouteHandler data={this.state} />
-        </div>
+        <RouteHandler data={this.state} />
       </div>
     );
   }
