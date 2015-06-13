@@ -44,6 +44,7 @@ var App = Eventful.createClass({
   },
 
   getAisle: function(itemName, index) {
+    console.log(itemName);
     var aisle;
     $.ajax({
       url: url.aisle,
